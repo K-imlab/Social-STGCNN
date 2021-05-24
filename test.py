@@ -137,8 +137,9 @@ print("*"*50)
 
 
 for feta in range(len(paths)):
+    print(feta)
     ade_ls = [] 
-    fde_ls = [] 
+    fde_ls = []
     path = paths[feta]
     exps = glob.glob(path)
     print('Model being tested are:',exps)
@@ -165,16 +166,17 @@ for feta in range(len(paths)):
         data_set = './datasets/'+args.dataset+'/'
 
         dset_test = TrajectoryDataset(
-                data_set+'test/',
+                # data_set+'test/',
+                "./opendata/NGSIM/processed/",
                 obs_len=obs_seq_len,
                 pred_len=pred_seq_len,
-                skip=1,norm_lap_matr=True)
+                skip=1, norm_lap_matr=True)
 
         loader_test = DataLoader(
                 dset_test,
                 batch_size=1,#This is irrelative to the args batch size parameter
-                shuffle =False,
-                num_workers=1)
+                shuffle=False,
+                num_workers=0)  # When occur freeze_support() Runtime Error set 0 this argument
 
 
 

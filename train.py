@@ -34,7 +34,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--input_size', type=int, default=2)
 parser.add_argument('--output_size', type=int, default=5)
 parser.add_argument('--n_stgcnn', type=int, default=1,help='Number of ST-GCNN layers')
-parser.add_argument('--n_txpcnn', type=int, default=5, help='Number of TXPCNN layers')
+parser.add_argument('--n _txpcnn', type=int, default=5, help='Number of TXPCNN layers')
 parser.add_argument('--kernel_size', type=int, default=3)
 
 #Data specifc paremeters
